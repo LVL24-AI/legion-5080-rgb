@@ -125,7 +125,7 @@ void RGBController_LenovoLegionGPU::SetupZones()
     zones.push_back(logo_zone);
 
     led logo_led;
-    logo_led.name           = "Logo LED";
+    logo_led.name           = "Logo (white, on/off)";
     leds.push_back(logo_led);
 
     SetupColors();

@@ -7,7 +7,7 @@ Tested on 27 Nov 2026 against OpenRGB master `664118d1` on Windows 11, with the 
 - Static color on the light strip, brightness 10–100 %
 - Blinking (3 speeds), Spiral Rainbow (3 speeds, brightness)
 - Off
-- Logo LED on/off. This LED is white only.
+- Logo LED on/off. This LED is white only, and its zone and LED are both called "Logo (white, on/off)" in OpenRGB.
 
 The effects run on the card's own chip. OpenRGB only sends the setting.
 
