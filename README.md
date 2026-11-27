@@ -3,6 +3,14 @@
 A small tray app that controls the lighting of the Lenovo Legion T7 34IAS10 with its RTX 5080, without Legion Space.
 It is one exe of under 40 KB, uses the .NET Framework built into Windows and needs no admin rights.
 
+<p>
+  <img src="docs/screenshots/legionrgb.png" alt="Legion RGB window" height="420">
+  &nbsp;
+  <img src="docs/screenshots/lgpu.png" alt="LGPU window" height="420">
+</p>
+
+*Left: Legion RGB (case + GPU). Right: LGPU (GPU only).*
+
 ## Download
 
 Prebuilt `LegionRgb.exe` and `LGPU.exe` are attached to the [Releases](../../releases). Or build them yourself with `build.ps1` (output goes to `bin\`).
