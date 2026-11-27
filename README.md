@@ -17,7 +17,7 @@ It is one exe of under 40 KB, uses the .NET Framework built into Windows and nee
 
 Prebuilt `LegionRgb.exe` and `LGPU.exe` are attached to the [Releases](../../releases). Or build them yourself with `build.ps1` (output goes to `bin\`).
 
-The `openrgb\` folder holds a work-in-progress OpenRGB controller for the GPU light chip.
+The `openrgb\` folder holds an OpenRGB controller for the GPU light chip, tested on the real card (static color, brightness, blinking, rainbow, logo LED). See [openrgb/README.md](openrgb/README.md) to build it.
 
 ## Run
 

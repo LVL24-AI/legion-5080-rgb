@@ -10,6 +10,7 @@
 |   SPDX-License-Identifier: GPL-2.0-or-later               |
 \*---------------------------------------------------------*/
 
+#include "LogManager.h"
 #include "RGBController_LenovoLegionGPU.h"
 
 /**------------------------------------------------------------------*\
@@ -24,8 +25,9 @@
         The light chip of Lenovo Legion RTX cards sits at I2C address
         0x49 on the GPU's I2C bus. It has a light strip (any color,
         static, blinking or rainbow, brightness 10-100%) and a logo
-        LED that can only be switched on or off. Set the Logo LED to
-        any color to switch it on and to black to switch it off.
+        LED that is white only and can only be switched on or off. Set
+        the Logo LED to any color to switch it on and to black to
+        switch it off.
 \*-------------------------------------------------------------------*/
 
 RGBController_LenovoLegionGPU::RGBController_LenovoLegionGPU(LenovoLegionGPUController* controller_ptr)
@@ -115,7 +117,7 @@ void RGBController_LenovoLegionGPU::SetupZones()
     leds.push_back(strip_led);
 
     zone logo_zone;
-    logo_zone.name          = "Logo";
+    logo_zone.name          = "Logo (white, on/off)";
     logo_zone.type          = ZONE_TYPE_SINGLE;
     logo_zone.leds_min      = 1;
     logo_zone.leds_max      = 1;
@@ -150,12 +152,17 @@ void RGBController_LenovoLegionGPU::DeviceUpdateMode()
     RGBColor    strip_color = colors[0];
     bool        logo_on     = (mode_value != LENOVO_LEGION_GPU_MODE_OFF) && (colors[1] != 0);
 
-    controller->SetMode(mode_value,
-                        (u8)RGBGetRValue(strip_color),
-                        (u8)RGBGetGValue(strip_color),
-                        (u8)RGBGetBValue(strip_color),
-                        modes[active_mode].brightness,
-                        modes[active_mode].speed);
+    bool ok = controller->SetMode(mode_value,
+                                  (u8)RGBGetRValue(strip_color),
+                                  (u8)RGBGetGValue(strip_color),
+                                  (u8)RGBGetBValue(strip_color),
+                                  modes[active_mode].brightness,
+                                  modes[active_mode].speed);
 
-    controller->SetLogo(logo_on);
+    ok &= controller->SetLogo(logo_on);
+
+    if(!ok)
+    {
+        LOG_WARNING("[%s] One or more I2C writes to the light chip failed", name.c_str());
+    }
 }

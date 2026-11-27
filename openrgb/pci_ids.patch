@@ -1,0 +1,24 @@
+﻿diff --git a/pci_ids/pci_ids.h b/pci_ids/pci_ids.h
+index 304eed8..0ba35d2 100644
+--- a/pci_ids/pci_ids.h
++++ b/pci_ids/pci_ids.h
+@@ -170,6 +170,7 @@
+ #define GALAX_SUB_VEN                                           0x1B4C
+ #define GAINWARD_SUB_VEN                                        0x10B0
+ #define GIGABYTE_SUB_VEN                                        0x1458
++#define LENOVO_SUB_VEN                                          0x17AA
+ #define MSI_SUB_VEN                                             0x1462
+ #define NVIDIA_SUB_VEN                                          0x10DE
+ #define PNY_SUB_VEN                                             0x196E
+@@ -1070,6 +1071,11 @@
+ #define MANLI_RTX3080TI_GALLARDO_SUB_DEV                        0x2612
+ #define MANLI_RTX4090_GALLARDO_SUB_DEV                          0x167C
+ 
++/*-----------------------------------------------------*\
++| Lenovo Sub-Device IDs                                 |
++\*-----------------------------------------------------*/
++#define LENOVO_LEGION_RTX5080_SUB_DEV                           0xC770
++
+ /*---------------------------------------------------------*\
+ | PCI ID Macros                                             |
+ \*---------------------------------------------------------*/
