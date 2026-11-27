@@ -7,9 +7,11 @@ It is one exe of under 40 KB, uses the .NET Framework built into Windows and nee
   <img src="docs/screenshots/legionrgb.png" alt="Legion RGB window" height="420">
   &nbsp;
   <img src="docs/screenshots/lgpu.png" alt="LGPU window" height="420">
+  &nbsp;
+  <a href="docs/demo.mp4"><img src="docs/screenshots/demo-preview.webp" alt="LGPU demo video (click to play)" height="420"></a>
 </p>
 
-*Left: Legion RGB (case + GPU). Right: LGPU (GPU only).*
+*Left: Legion RGB (case + GPU). Middle: LGPU (GPU only). Right: LGPU in action on the RTX 5080, click it for the [full video](docs/demo.mp4).*
 
 ## Download
 
