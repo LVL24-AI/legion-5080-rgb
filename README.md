@@ -17,6 +17,9 @@ The `openrgb\` folder holds a work-in-progress OpenRGB controller for the GPU li
 
 ## LGPU (GPU only)
 
+LGPU is for the Lenovo GeForce RTX 5080 OEM card when it's used on its own, in a custom PC build without the other Legion parts and without Legion Space or any other Lenovo software.
+It talks only to the card's light chip, through the NVIDIA driver, so it doesn't need the Legion case, its USB lighting controller or Lenovo's services.
+
 `bin\LGPU.exe` is a smaller version (under 30 KB) with only the GPU controls: light switch, effect, color, speed, brightness and logo LED.
 It keeps its own settings in `%APPDATA%\LGPU` and takes the GPU settings from Legion RGB on its first start.
 Run either LGPU or Legion RGB, not both: each one re-applies its own GPU settings.
